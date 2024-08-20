@@ -1,0 +1,95 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<!-- Mirrored from behinaffiliate.ir/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Aug 2023 07:07:11 GMT -->
+<head>
+<title>عضویت در سایت</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{%  static 'account/css/style.css' %}">
+<link rel="stylesheet" href="{%  static 'account/css/form.css' %}">
+<link rel="stylesheet" href="{%  static 'account/css/fonts.css' %}">
+<script type="text/javascript" src="{%  static 'account/js/jquery.js' %}"></script>
+</head>
+<body>
+<div class="formbec rt rt-center">
+<div class="main-form minsx rt-relative rt-20px rt-overflow nfgf register-form">
+
+<div class="side rt-bg rt">
+<a href="{% url 'home:home' %}"><img style="width:100px;height: 100px;radius-border:10%" src="{%  static 'home/img/general/logo.jpg' %}" class="right logo"></a>
+<a href="{% url 'account:login' %}" class="btn-action rt-20px rt-555 rt-15 rt-bold rt-bg left"><i class="fa fa-sign-in"></i> ورود</a>
+<h1 class="title rt rt-800 rt-000 rt-21">ثبت نام در بوعلی سینا </h1>
+<span class="inf rt-444 rt rt-14">برای انجام ثبت نام در بوعلی سینا فرم زیر را تکمیل بفرمایید</span>
+<form action="" method="POST" class="validate" novalidate="novalidate">
+    {% csrf_token %}
+<div class="field small">
+<label for="text-input-name">نام  و نام خانوادگی </label>
+<input name="full_name" type="text" class="required" id="text-input-name" dir="rtl">
+</div>
+<div class="field small">
+<label for="text-input-email">پست الکترونیک</label>
+<input name="email" type="text" class="{required: true, email: true}" id="text-input-email" dir="ltr">
+</div>
+<div class="field small">
+<label for="text-input-password">رمز عبور</label>
+<input name="password" type="password" class="required" id="text-input-password" dir="ltr">
+</div>
+
+<div class="field small">
+<label for="text-input-password">تکرار رمز عبور </label>
+<input name="confirm_password" type="password" class="required" id="text-input-password" dir="ltr">
+</div>
+
+<div class="field small">
+<label for="text-input-phone">شماره تماس</label>
+<input name="phone" type="text" class="required" id="text-input-phone" dir="rtl">
+</div>
+<div class="field small">
+<label for="text-input-city">شهر</label>
+<input name="city"  type="text" id="text-input-city" dir="rtl">
+</div>
+<div class="field small">
+<label for="text-input-bank_name">نام کشور</label>
+<input name="country" type="text" id="text-input-bank_name" dir="rtl">
+</div>
+
+
+
+<div class="field large">
+<label for="text-input-code">عدد <img src="{%  static 'account/images/captcha.html' %}" border="0"> را در کادر زیر وارد کنید </label><input name="code" type="text" class="required" id="text-input-code" dir="rtl">
+</div>
+<span class="right rt-pointer rt-bold rt-13" id="ternsx-btn"><i class="fa fa-angle-down"></i> مطالعه قوانین و مقررات <samp style="color:red">*</samp></span>
+<input type="submit" name="register_partner" class="bt blue" value="ثبت نام">
+</form>
+
+<div class="side rt rt-fff rt-13 terns" id="ternsx">
+<div class="rt fasele"></div>
+<p style="text-align: right;"><strong class="rt rt-800 rt-16 rt-align">شرایط و قوانین استفاده از سامانه
+<span class="rt-800 rt-sorme">مدرسه </span></strong><strong>«</strong><strong>بوعلی سینا </strong><strong>»</strong></p>
+
+
+
+<p style="text-align: right;">
+مدرسه بوعلی سینا
+</p>
+
+
+    <br>
+<div class="rt fasele"></div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+$('#ternsx').hide();
+$('#ternsx-btn').click(function(){
+$('#ternsx').slideToggle(400);
+});
+});
+</script>
+</body>
+
+<!-- Mirrored from behinaffiliate.ir/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Aug 2023 07:07:12 GMT -->
+</html>

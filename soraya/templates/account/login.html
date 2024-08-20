@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<!-- Mirrored from behinaffiliate.ir/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Aug 2023 07:07:10 GMT -->
+<head>
+<title>صفحه ورود</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{%  static 'account/css/style.css' %}">
+<link rel="stylesheet" href="{%  static 'account/css/form.css' %}">
+<link rel="stylesheet" href="{%  static 'account/css/fonts.css' %}">
+</head>
+<body>
+<div class="formbec rt rt-center">
+<div class="main-form minsx rt-relative rt-20px rt-overflow nfgf">
+<div class="side rt-bg ascx right">
+<div class="rt fasele"></div>
+<a href="{% url 'home:home' %}"><img style="width: 100px;height: 100px" src="{%  static 'home/img/general/logo.jpg' %}" class="right logo"></a>
+<a href="#" class="btn-action rt-20px rt-555 rt-bg rt-15 rt-bold left"><i class="fa fa-key"></i> بازیابی پسورد</a>
+
+<form  method="POST">
+    {% csrf_token %}
+<h1 class="title rt rt-800 rt-000 rt-21">ورود به حساب کاربری</h1>
+<div class="field large">
+<label>نام کاربری</label>
+<input type="text" name="username" data-icon="user" dir="ltr"/>
+</div>
+<div class="field large">
+<label>کلمه عبور</label>
+<input type="password" name="password" data-icon="closed-lock"  dir="ltr"/>
+</div>
+<span class="rt divider"></span>
+<span class="inf rt-444 right rt-14" style="margin-top: 12px"><input id="ck" type="checkbox" /> <label for="ck">ذخیره مشخصات ورود‌؟</label></span>
+<input type="submit" class="bt blue large" value="ورود" />
+</form>
+
+<div class="rt fasele"></div>
+</div>
+<div class="side rt-absolute zxczxc rt-center rt-align left rt-fff rt-13">
+<div class="rt fasele"></div>
+<h5 class="rt-fff rt-800 rt-27 rt-align">حساب همکاری ندارید؟</h5>
+<samp class="rt rt-align">همین حالا ثبت نام کنید</samp>
+<a href="{% url 'account:signup' %}" class="rt rt-align rt-15 rt-medium"><span class="rt-35px rt-sorme rt-fff rt-medium rt-bg">ثبت نام</span></a>
+<div class="rt fasele"></div>
+</div>
+</div>
+</div>
+</body>
+
+<!-- Mirrored from behinaffiliate.ir/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Aug 2023 07:07:11 GMT -->
+</html>

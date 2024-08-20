@@ -1,0 +1,92 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<!-- Mirrored from behinaffiliate.ir/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Aug 2023 07:07:08 GMT -->
+<head>
+<title> سوالات پر تکرار </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'account/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'account/css/fonts.css' %}">
+<script type="text/javascript" src="{% static 'account/js/jquery.js' %}"></script>
+</head>
+<body>
+
+<!--Header Start-->
+    {% include 'account/faq_header.html' %}
+<!--Header End-->
+
+<!--Top Start-->
+<section class="page-top rt-relative rt rt-align">
+<div class="main">
+<div class="rt rt-relative rt-z-index rellax" data-rellax-percentage="0.7">
+<h1 class="rt-800 rt rt-333 rt-35">سوالات متداول</h1>
+<div class="desc rt-15 rt rt-777">سوالات پر تکرار شما را در اینجا آوردیم </div>
+</div>
+</div>
+</section>
+<!--Top End-->
+
+<div class="rt sep-Bg3"><span class="sep-bgParts N2"></span><span class="sep-bgParts N3"></span></div>
+
+<main>
+
+<article class="faq rt">
+<ul id="accordion2" class="accordion rt-bg rt-15px rt rellax" data-rellax-speed="-1">
+    {% for q in data %}
+<li class="rt">
+<div class="link rt-15 rt-bold rt-sorme rt-pointer rt"><i class="fa fa-plus right"></i><span class="right rt-medium">
+    {{ q.title }}
+</span></div>
+<ul class="submenu rt rt-15">
+<p>
+    {{ q.text }}
+</p>
+</ul>
+</li>
+    {% endfor %}
+
+
+
+</ul>
+</article>
+
+</main>
+
+<!--Footer Start-->
+    {% include 'account/faq_footer.html' %}
+<!--Footer End-->
+
+<!--Nav Mobile Start-->
+    {% include 'account/nav_mobile_footer.html' %}
+<!--Nav Mobile End-->
+
+<script type="text/javascript" src="{% static 'account/js/rellax.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'account/js/java.js' %}"></script>
+<script type="text/javascript">
+$(function() {
+var Accordion2 = function(el, multiple) {
+this.el = el || {};
+this.multiple = multiple || false;
+var links = this.el.find('.link');
+links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+}
+Accordion2.prototype.dropdown = function(e) {
+var $el = e.data.el;
+$this = $(this),
+$next = $this.next();
+$next.slideToggle();
+$this.parent().toggleClass('open');
+if (!e.data.multiple) {
+$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+};
+}
+var accordion2 = new Accordion2($('#accordion2'), false);
+});
+var rellax = new Rellax('.rellax');
+</script>
+</body>
+
+<!-- Mirrored from behinaffiliate.ir/faq.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Aug 2023 07:07:08 GMT -->
+</html>

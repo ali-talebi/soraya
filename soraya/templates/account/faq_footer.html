@@ -1,0 +1,53 @@
+{% load static %}
+<footer>
+<div class="main rt-fff">
+<div class="footer-widget w-1 right">
+<a href="{% url 'home:home' %}"><img src="{% static 'home/img/general/logo.jpg' %}" height="40" class="logo-f right"></a>
+<a href="tel:08622222222" class="number-phone rt-align rt-15 rt-medium rt rt-fff rt-30px">شماره تماس : ۰۸۲۴۲۲۲۲۲۲۲</a>
+<div class="social rt">
+<span class="right rt-13 rt-fff">در شبکه های اجتماعی دنبال کنید :</span>
+<a href="#" class="left rt-center rt-50px rt-sorme in"><i class="fa fa-instagram"></i></a>
+<a href="#" class="left rt-center rt-50px rt-sorme tg"><i class="fa fa-paper-plane"></i></a>
+</div>
+</div>
+
+<div class="footer-widget w-2 right">
+<h3 class="title rt rt-bold rt-15">دسترسی سریع</h3>
+<ul class="rt rt-14">
+<li class="right"><a href="{% url 'account:signup'  %}" target="_blank" class="rt-fff">ثبت نام</a></li>
+<li class="right"><a href="{% url 'account:login'  %}" target="_blank" class="rt-fff">ورود</a></li>
+
+<li class="right"><a href="{% url 'home:aboutus' %}" class="rt-fff">درباره ما</a></li>
+<li class="right"><a href="{% url 'home:faq' %}" class="rt-fff">سوالات متداول</a></li>
+</ul>
+</div>
+
+<div class="footer-widget w-3 right">
+<h3 class="title rt rt-bold rt-15">تست</h3>
+<span class="rt sxs rt-13">با نصب اپلیکیشن به راحتی حساب خود را مدیریت کنید. </span>
+<a href="index-2.html" class="right rt-5px rt-fff">
+<div class="des right rt-13">
+<span class="rt">دانلود مستقیم</span>
+<span class="rt rt-12">نسخه Android</span>
+</div>
+<i class="fa fa-android left"></i>
+</a>
+<a href="index-2.html" class="left rt-5px rt-fff">
+<div class="des right rt-13">
+<span class="rt">دانلود مستقیم</span>
+<span class="rt rt-12">نسخه iOS</span>
+</div>
+<i class="fa fa-apple left"></i>
+</a>
+</div>
+
+<div class="footer-widget w-4 right">
+<a href="index-2.html"><img src="{% static 'account/images/namad-1.png' %}"></a>
+<a href="index-2.html"><img src="{% static 'account/images/namad-2.png' %}"></a>
+</div>
+
+</div>
+<div class="copyright rt rt-15 rt-align">
+<div class="main">کلیه حقوق این سایت متعلق به مدرسه بوعلی سینا میباشد </div>
+</div>
+</footer>

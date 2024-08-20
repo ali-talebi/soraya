@@ -1,0 +1,21 @@
+{% load static %}
+<header class="fixed">
+<div class="main">
+<div class="right rt-50px rt-center rt-pointer rt-27 rt-fff" id="menu-btn"><i class="fa fa-bars"></i></div>
+<a href="{% url 'home:home' %}"><img  src="{%  static 'home/img/general/logo.jpg' %}" height="48" class="logo logo-a right"><img src="{%  static 'home/img/general/logo.jpg' %}" height="74" class="logo logo-b right"></a>
+
+
+<ul class="menu right rt-align rt-14">
+
+<li><a href="{% url 'home:faq' %}" class="rt-bold rt-fff">سوالات متداول</a></li>
+<li><a href="{% url 'home:aboutus' %}" class="rt-bold rt-fff">درباره ما</a></li>
+<li><a href="{% url 'home:contactus' %}" class="rt-bold rt-fff">تماس با ما</a></li>
+</ul>
+<div class="log-reg rt-14 left">
+<a href="{% url 'account:login' %}" target="_blank" class="log left rt-bg rt-bold rt-35px rt-sorme"><i class="fa fa-user"></i> ورود به پنل همکاری</a>
+<a href="{% url 'account:signup'  %}" target="_blank" class="reg left rt-bold rt-35px rt-fff"><i class="fa fa-user-plus"></i> ثبت نام</a>
+</div>
+<a href="login.html" class="log-panel rt-fff rt-18 rt-center rt-50px left"><i class="fa fa-user-o"></i></a>
+<a href="{% url 'account:signup'  %}" class="log-panelplus rt-14 rt-bold rt-center rt-50px left">ثبت نام</a>
+</div>
+</header>
