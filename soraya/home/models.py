@@ -53,3 +53,20 @@ class ContactUs(models.Model) :
     class Meta :
         db_table = "ContactUs"
         verbose_name_plural = 'ارتباط با ما'
+
+
+class Supporter(models.Model) :
+
+    name    = models.CharField(verbose_name = 'نام حامی ما' , max_length = 100 )
+    picture = models.FileField(verbose_name = 'لوگو' , upload_to = 'Supporter/' )
+
+
+    def __str__(self ) :
+        return self.name
+
+
+
+    class Meta :
+        db_table = 'Supporter'
+        verbose_name_plural = 'Supporter'
+

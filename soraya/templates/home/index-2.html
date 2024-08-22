@@ -1,6 +1,6 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa-IR" >
 <head>
 	<title> مدرسه بوعلی سینا</title>
 
@@ -11,7 +11,7 @@
 	<meta name="description" content="Eduport- LMS, Education and Course Theme">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="assets/images/favicon.ico">
+	<link rel="shortcut icon" href="{%  static 'home/assets/images/logo.jpg' %}">
 
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +23,8 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'home/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'home/assets/vendor/tiny-slider/tiny-slider.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'home/assets/vendor/glightbox/css/glightbox.css' %}">
+
+
 
 	<!-- Theme CSS -->
 	<link id="style-switch" rel="stylesheet" type="text/css" href="{% static 'home/assets/css/style.css' %}">
@@ -38,10 +40,10 @@
 			<!-- Navbar top Left-->
 			<!-- Top info -->
 			<ul class="nav align-items-center justify-content-center">
-				<li class="nav-item me-3" data-bs-toggle="tooltip" data-bs-animation="false" data-bs-placement="bottom" data-bs-original-title="Sunday CLOSED">
+				<li class="nav-item me-3" data-bs-toggle="tooltip" data-bs-animation="false" data-bs-placement="bottom" data-bs-original-title="جمعه تعطیل">
 					<span><i class="far fa-clock me-2"></i>زمان حضور : شنبه تا  پنج شنبه 8 - 16 </span>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item"  data-bs-toggle="tooltip" data-bs-animation="false" data-bs-placement="bottom"    data-bs-original-title="شماره تماس " >
 					<a class="nav-link" href="#"><i class="fas fa-headset me-2"></i>تماس با ما : 021325000</a>
 				</li>
 			</ul>
@@ -52,10 +54,7 @@
 				<div class="dropdown me-3">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdownLanguage" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe me-2"></i>Language</a>
 					<div class="dropdown-menu mt-2 min-w-auto shadow" aria-labelledby="dropdownLanguage">
-						<a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{% static 'home/assets/images/flags/uk.svg' %}" alt="">English</a>
-						<a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{% static 'home/assets/images/flags/sp.svg' %}" alt="">Español</a>
-						<a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{% static 'home/assets/images/flags/fr.svg' %}" alt="">Français</a>
-						<a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{% static 'home/assets/images/flags/gr.svg' %}" alt="">Deutsch</a>
+						<a class="dropdown-item me-4" href="#"><img style="width:10px;heigth:10px" class="fa-fw me-2" src="{% static 'home/assets/images/flags/sec08.png' %}" alt="">persian</a>
 					</div>
 				</div>
 
@@ -100,54 +99,19 @@
 				<ul class="navbar-nav navbar-nav-scroll mx-auto">
 					<!-- Nav item 1 Demos -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle active" href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Demos</a>
+						<a class="nav-link dropdown-toggle active" href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">خانه</a>
 						<ul class="dropdown-menu" aria-labelledby="demoMenu">
-							<li> <a class="dropdown-item" href="index.html">Home Default</a></li>
-							<li> <a class="dropdown-item active" href="index-2.html">Home Education</a></li>
-							<li> <a class="dropdown-item" href="">Home Academy</a></li>
-							<li> <a class="dropdown-item" href="">Home Course</a></li>
-							<li> <a class="dropdown-item" href="">Home University</a></li>
-							<li> <a class="dropdown-item" href="">Home Kindergarten</a></li>
-							<li> <a class="dropdown-item" href="">Home Landing</a></li>
-							<li> <a class="dropdown-item" href="">Home Tutor</a></li>
-							<li> <hr class="dropdown-divider"></li>
-							<li> <a class="dropdown-item" href="">Request a demo</a></li>
-							<li> <a class="dropdown-item" href="">Book a Class</a></li>
-							<li> <a class="dropdown-item" href="">Free Access</a></li>
-							<li> <a class="dropdown-item" href="">Admission Form</a></li>
+
+							<li> <a class="dropdown-item active" href="{% url 'home:home' %}">خانه</a></li>
 
 							<li> <hr class="dropdown-divider"></li>
-							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">Dropdown levels</a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
 
-									<!-- dropdown submenu open right -->
-									<li class="dropdown-submenu dropend">
-										<a class="dropdown-item dropdown-toggle" href="#">Dropdown (end)</a>
-										<ul class="dropdown-menu" data-bs-popper="none">
-											<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-											<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-										</ul>
-									</li>
-									<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-
-									<!-- dropdown submenu open left -->
-									<li class="dropdown-submenu dropstart">
-										<a class="dropdown-item dropdown-toggle" href="#">Dropdown (start)</a>
-										<ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
-											<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-											<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-										</ul>
-									</li>
-									<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-								</ul>
-							</li>
 						</ul>
 					</li>
 
 					<!-- Nav item 2 Pages -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">دسترسی ها</a>
 						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
 							<!-- Dropdown submenu -->
 							<li class="dropdown-submenu dropend">
@@ -161,39 +125,42 @@
 							<li class="dropdown-submenu dropend">
 								<a class="dropdown-item dropdown-toggle" href="#">درباره ما </a>
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="">درباره ما</a></li>
+									<li> <a class="dropdown-item" href="{% url 'home:aboutus' %}">درباره ما</a></li>
 
 								</ul>
 							</li>
 
-							<li> <a class="dropdown-item" href="instructor-list.html">Instructor List</a></li>
-							<li> <a class="dropdown-item" href="instructor-single.html">Instructor Single</a></li>
-							<li> <a class="dropdown-item" href="become-instructor.html">Become an Instructor</a></li>
+
 
 							<!-- Dropdown submenu -->
 							<li class="dropdown-submenu dropend">
 								<a class="dropdown-item dropdown-toggle" href="#">احراز هویت </a>
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="sign-in.html">ورود</a></li>
-									<li> <a class="dropdown-item" href="sign-up.html">ثبت نام </a></li>
-									<li> <a class="dropdown-item" href="forgot-password.html">فراموشی رمز </a></li>
+								    {% if user.is_authenticated %}
+								        <li> <a class="dropdown-item" href="{% url 'account:logout' %}">خروج</a></li>
+								    {% else %}
+									    <li> <a class="dropdown-item" href="{% url 'account:login' %}">ورود</a></li>
+									    <li> <a class="dropdown-item" href="{% url 'account:signup' %}">ثبت نام </a></li>
+									    <li> <a class="dropdown-item" href="">فراموشی رمز </a></li>
+
+									{% endif %}
 								</ul>
 							</li>
 
-							<li> <a class="dropdown-item" href="faq.html">سوالات پر تکرار</a></li>
+							<li> <a class="dropdown-item" href="{% url 'home:faq' %}">سوالات پر تکرار</a></li>
 
 						</ul>
 					</li>
 
 					<!-- Nav item 3 Account -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a>
+						<a class="nav-link dropdown-toggle" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">حساب کاربری</a>
 						<ul class="dropdown-menu" aria-labelledby="accounntMenu">
 							<!-- Dropdown submenu -->
 							<li class="dropdown-submenu dropend">
 								<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-tie fa-fw me-1"></i>کارمندان</a>
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="instructor-dashboard.html"><i class="bi bi-grid-fill fa-fw me-1"></i>معلمین</a> </li>
+									<li> <a class="dropdown-item" href=""><i class="bi bi-grid-fill fa-fw me-1"></i>معلمین</a> </li>
 
 								</ul>
 							</li>
@@ -204,19 +171,20 @@
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
 									<li> <a class="dropdown-item" href="student-dashboard.html"><i class="bi bi-grid-fill fa-fw me-1"></i>داشبورد</a> </li>
 
-								
+
 								</ul>
 							</li>
-							
-							<li> <a class="dropdown-item" href="#"><i class="fas fa-user-cog fa-fw me-1"></i>Admin (Coming Soon)</a> </li>
+                            {% if user.is_authenticated %}
+
 							<li> <hr class="dropdown-divider"></li>
 							<li> <a class="dropdown-item" href="instructor-edit-profile.html"><i class="fas fa-fw fa-edit me-1"></i> ویرایش پروفایل </a> </li>
 							<li> <a class="dropdown-item" href="instructor-setting.html"><i class="fas fa-fw fa-cog me-1"></i>تنظیمات</a> </li>
+							{% endif%}
 						</ul>
 					</li>
 
 					<!-- Nav item 4 Component-->
-					<li class="nav-item"><a class="nav-link" href="docs/alerts.html">Components</a></li>
+
 
 					<!-- Nav item 5 link-->
 					<li class="nav-item dropdown">
@@ -224,27 +192,15 @@
 							<i class="fas fa-ellipsis-h"></i>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-end min-w-auto" data-bs-popper="none">
-							<li> 
-								<a class="dropdown-item" href="index-2.htm" target="_blank">
+							<li>
+								<a class="dropdown-item" href="" target="_blank">
 									<i class="text-warning fa-fw bi bi-life-preserver me-2"></i>پشتیبانی
-								</a> 
+								</a>
 							</li>
-							<li> 
-								<a class="dropdown-item" href="docs/index.html" target="_blank">
-									<i class="text-danger fa-fw bi bi-card-text me-2"></i>Documentation
-								</a> 
-							</li>
+
 							<li> <hr class="dropdown-divider"></li>
-							<li> 
-								<a class="dropdown-item" href="rtl/index.htm" target="_blank">
-									<i class="text-info fa-fw bi bi-toggle-off me-2"></i>RTL demo
-								</a> 
-							</li>
-							<li> 
-								<a class="dropdown-item" href="https://themes.getbootstrap.com/store/webestica/" target="_blank">
-									<i class="text-success fa-fw bi bi-cloud-download-fill me-2"></i>Buy Eduport!
-								</a> 
-							</li>
+
+
 						</ul>
 					</li>
 				</ul>
@@ -258,7 +214,7 @@
 				</a>
 				<div class="dropdown-menu dropdown-menu-end shadow rounded p-2" aria-labelledby="navSearch" data-bs-popper="none">
 					<form class="input-group">
-						<input class="form-control border-primary" type="search" placeholder="Search..." aria-label="Search">
+						<input class="form-control border-primary" type="search" placeholder="جستجو" aria-label="Search">
 						<button class="btn btn-primary m-0" type="submit">جستجو</button>
 					</form>
 
@@ -291,17 +247,24 @@
 								<img class="avatar-img rounded-circle shadow" src="{%  static 'home/assets/images/logo.jpg' %}" alt="avatar">
 							</div>
 							<div>
-								<a class="h6" href="#">Lori Ferguson</a>
-								<p class="small m-0">example@gmail.com</p>
+							    {% if user.is_authenticated  %}
+								<a class="h6" href="#">user.email</a>
+								{% else %}
+								<a class="h6" href="#">هنوز وارد نشدید</a>
+								{% endif %}
 							</div>
 						</div>
 						<hr>
 					</li>
 					<!-- Links -->
+
+					<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i> پشتیبانی </a></li>
+                    {% if user.is_authenticated %}
+
 					<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i> ویرایش پروفایل </a></li>
 					<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i> تنظیمات حساب کاربری  </a></li>
-					<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i> پشتیبانی </a></li>
 					<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>خروج</a></li>
+					{% endif %}
 					<li> <hr class="dropdown-divider"></li>
 					<!-- Dark mode switch START -->
 					<li>
@@ -311,7 +274,7 @@
 							</div>
 							<span>Dark mode</span>
 						</div>
-					</li> 
+					</li>
           <!-- Dark mode switch END -->
 				</ul>
 			</div>
@@ -327,7 +290,7 @@
 
 <!-- =======================
 Main Banner START -->
-<section class="pt-0 position-relative overflow-hidden h-700px h-sm-600px h-lg-700px rounded-top-4 mx-2 mx-md-4" style="background-image:url('{% static 'home/assets/images/first_page.jpeg' %}'); background-position: center; background-size: cover;">
+<section class="pt-0 position-relative overflow-hidden h-700px h-sm-600px h-lg-700px rounded-top-4 mx-2 mx-md-4" style="background-image:url('{% static 'home/assets/images/bg/01.jpg' %}'); background-position: center; background-size: cover;">
 	<div class="bg-overlay bg-dark opacity-5"></div>
 	<!-- SVG decoration for curve -->
 	<figure class="position-absolute bottom-0 left-0 w-100 d-md-block mb-n3 z-index-9">
@@ -341,8 +304,8 @@ Main Banner START -->
 			<path class="fill-orange" d="M29.004,14.502 C29.004,22.512 22.511,29.004 14.502,29.004 C6.492,29.004 -0.001,22.512 -0.001,14.502 C-0.001,6.492 6.492,-0.001 14.502,-0.001 C22.511,-0.001 29.004,6.492 29.004,14.502 Z"></path>
 		</svg>
 	</figure>
-		
-	<div class="container z-index-9 position-relative">
+
+	<div class="container z-index-9 position-relative" direction='rtl' >
 		<!-- SVG decoration -->
 		<figure class="position-absolute bottom-0 end-0 z-index-9 ms-5 mb-5">
 			<svg width="23px" height="23px">
@@ -353,18 +316,18 @@ Main Banner START -->
 		<div class="row py-0 py-md-5 align-items-center text-center text-sm-start">
 			<div class="col-sm-10 col-lg-8 col-xl-6 all-text-white my-5 mt-md-0">
 				<div class="py-0 py-md-5 my-5">
-					
+
 					<!-- Badge with content -->
 					<div class="d-inline-block bg-white px-3 py-2 rounded-pill mb-3">
 						<p class="mb-0 text-dark"><span class="badge bg-success rounded-pill me-1">جدید </span>	   مدرسه از راه دور هوشمند    </p>
 					</div>
-					
+
 					<!-- Title -->
 					<h1 class="text-white display-5"> شروع یادگیری  <br> <span class="text-warning"> مدرسه بوعلی سینا  </span></h1>
 					<p class="text-white">
-						مدرسه از راه دور هوشمند متناسب همه و همه جا 
+						مدرسه از راه دور هوشمند متناسب همه و همه جا
 					</p>
-					
+
 					<div class="d-sm-flex align-items-center mt-4">
 						<!-- Button -->
 						<a href="#" class="btn btn-primary me-2 mb-4 mb-sm-0"> مدرسه نوین </a>
@@ -392,10 +355,9 @@ Client START -->
 				<div class="tiny-slider">
 					<div class="tiny-slider-inner" data-arrow="false" data-dots="false" data-gutter="80" data-items-xl="6" data-items-lg="5" data-items-md="4" data-items-sm="3" data-items-xs="2" data-autoplay="2000">
 						<!-- Slide item START -->
-						<div class="item"> <img class="grayscale" src="{% static 'home/assets/images/client/tejarat.png' %}" alt="tejarat-logo"> </div>
-						<div class="item"> <img class="grayscale" src="{% static 'home/assets/images/client/irancell.png' %}" alt="irancell-logo"> </div>
-
-						irancell
+						{% for img in supporter %}
+						<div class="item"> <img  style="width:75px;heigth:75px" class="grayscale" src="{{img.picture.url}}" alt="{{img.name}}"> </div>
+                        {% endfor %}
 						<!-- Slide item END -->
 					</div>
 				</div>
@@ -409,12 +371,12 @@ Client END -->
 
 <!-- =======================
 About START -->
-<section>
+<section dir='rtl'>
 	<div class="container">
 		<div class="row g-4 align-items-center">
 			<div class="col-lg-5">
 				<!-- Title -->
-				<h2> در مورد ما بیشتر بدانید <span class="text-warning"> مدرسه آنلاین  و هوشمند </span> بوعلی سینا </h2>
+				<h2>  <span class="text-warning"> مدرسه آنلاین  و هوشمند </span> بوعلی سینا </h2>
 				<!-- Image -->
 				<img src="{%  static 'home/assets/images/logo.jpg' %}" class="rounded-2" alt="">
 			</div>
@@ -425,7 +387,7 @@ About START -->
 						<div class="icon-lg bg-orange bg-opacity-10 text-orange rounded-2"><i class="fas fa-user-tie fs-5"></i></div>
 						<h5 class="mt-2"> هوشمند سازی</h5>
 						<p class="mb-0">
-							مدرسه بوعلی سینا 
+							مدرسه بوعلی سینا
 						</p>
 					</div>
 					<!-- Item -->
@@ -433,7 +395,7 @@ About START -->
 						<div class="icon-lg bg-info bg-opacity-10 text-info rounded-2"><i class="fas fa-book fs-5"></i></div>
 						<h5 class="mt-2">یادگیری همه چیز </h5>
 						<p class="mb-0">
-							مدرسه بوعلی سینا 
+							مدرسه بوعلی سینا
 						</p>
 					</div>
 					<!-- Item -->
@@ -441,7 +403,7 @@ About START -->
 						<div class="icon-lg bg-success bg-opacity-10 text-success rounded-2"><i class="bi bi-alarm-fill fs-5"></i></div>
 						<h5 class="mt-2">یادگیری منعطف </h5>
 						<p class="mb-0">
-							مدرسه بوعلی سینا 
+							مدرسه بوعلی سینا
 						</p>
 					</div>
 					<!-- Item -->
@@ -449,9 +411,9 @@ About START -->
 						<div class="icon-lg bg-purple bg-opacity-10 text-purple rounded-2"><i class="fas fa-university fs-5"></i></div>
 						<h5 class="mt-2">مورد تایید وزارت آموزش و پرورش </h5>
 						<p class="mb-0">
-							مدرسه بوعلی سینا 
+							مدرسه بوعلی سینا
 						</p>
-					</div>		
+					</div>
 				</div>
 			</div>
 		</div>
@@ -524,7 +486,7 @@ Trending courses START -->
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 			<!-- Card Item END -->
 
 			<!-- Card Item START -->
@@ -663,7 +625,7 @@ Video divider START -->
 			<path class="fill-primary" d="M752.5,51.9c-4.5,3.9-8.9,7.8-13.4,11.8c-51.5,45.3-104.8,92.2-171.7,101.4c-39.9,5.5-80.2-3.4-119.2-12.1 c-32.3-7.2-65.6-14.6-98.9-13.9c-66.5,1.3-128.9,35.2-175.7,64.6c-11.9,7.5-23.9,15.3-35.5,22.8c-40.5,26.4-82.5,53.8-128.4,70.7 c-2.1,0.8-4.2,1.5-6.2,2.2L0,301.9c3.3-1.1,6.7-2.3,10.2-3.5c46.1-17,88.1-44.4,128.7-70.9c11.6-7.6,23.6-15.4,35.4-22.8 c46.7-29.3,108.9-63.1,175.1-64.4c33.1-0.6,66.4,6.8,98.6,13.9c39.1,8.7,79.6,17.7,119.7,12.1C634.8,157,688.3,110,740,64.6 c4.5-3.9,9-7.9,13.4-11.8C773.8,35,797,16.4,822.2,1l-0.7-1C796.2,15.4,773,34,752.5,51.9z"></path>
 		</svg>
 	</figure>
-	
+
 	<!-- SVG decoration -->
 	<figure class="position-absolute bottom-0 start-50 translate-middle-x ms-n9 mb-5">
 		<svg width="23px" height="23px">
@@ -690,7 +652,7 @@ Video divider START -->
 				</figure>
 
 				<!-- Title -->
-				<h2 class="h1">Study whenever you want, from any place in the world.</h2>
+				<h2 class="h1">از هرجایی میخوای مطلعه کن از هر کجای دنیا </h2>
 			</div>
 
 			<div class="col-lg-5 position-relative mt-4 mt-lg-0">
@@ -721,7 +683,7 @@ Event START -->
 			<!-- Slider START -->
 			<div class="tiny-slider arrow-round arrow-creative arrow-blur arrow-hover">
 				<div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-dots="false" data-items-xl="3" data-items-md="2" data-items-xs="1">
-					
+
 					<!-- Card item START -->
 					<div class="card">
 						<div class="position-relative">
@@ -868,64 +830,6 @@ Event END -->
 
 <!-- =======================
 Newsletter START -->
-<section class="mb-n9 position-relative z-index-9">
-	<div class="container">
-		<div class="row">
-			<div class="col-11 col-md-10 mx-auto">
-				<div class="bg-warning rounded-3 shadow p-3 p-sm-4 position-relative overflow-hidden">
-					<!-- SVG decoration -->
-					<figure class="position-absolute top-100 start-100 translate-middle mt-n6 ms-n5">
-						<svg width="211px" height="211px">
-							<path class="fill-white opacity-4" d="M210.030,105.011 C210.030,163.014 163.010,210.029 105.012,210.029 C47.013,210.029 -0.005,163.014 -0.005,105.011 C-0.005,47.015 47.013,-0.004 105.012,-0.004 C163.010,-0.004 210.030,47.015 210.030,105.011 Z"></path>
-						</svg>
-					</figure>
-					<!-- SVG decoration -->
-					<figure class="position-absolute top-100 start-0 translate-middle mt-n6 ms-5">
-						<svg width="141px" height="141px">
-							<path class="fill-white opacity-4" d="M140.520,70.258 C140.520,109.064 109.062,140.519 70.258,140.519 C31.454,140.519 -0.004,109.064 -0.004,70.258 C-0.004,31.455 31.454,-0.003 70.258,-0.003 C109.062,-0.003 140.520,31.455 140.520,70.258 Z"></path>
-						</svg>
-					</figure>
-					<!-- SVG decoration -->
-					<figure class="position-absolute top-0 start-50 mt-4 ms-n9">
-						<svg width="41px" height="41px">
-							<path class="fill-white opacity-4" d="M40.531,20.265 C40.531,31.458 31.457,40.531 20.265,40.531 C9.072,40.531 -0.001,31.458 -0.001,20.265 C-0.001,9.073 9.072,-0.001 20.265,-0.001 C31.457,-0.001 40.531,9.073 40.531,20.265 Z"></path>
-						</svg>
-					</figure>
-
-					<!-- Icon logos START -->
-					<div class="p-2 bg-white shadow rounded-3 rotate-74 position-absolute top-0 start-0 ms-3 mt-5 d-none d-sm-block">
-						<img src="{% static 'home/assets/images/client/science.svg' %}" class="h-40px" alt="Icon">
-					</div>
-					<div class="p-1 bg-white shadow rounded-3 rotate-74 position-absolute top-0 end-0 mt-5 me-5 d-none d-sm-block">
-						<img src="{% static 'home/assets/images/client/angular.svg' %}" class="h-30px" alt="Icon">
-					</div>
-					<div class="p-2 bg-white shadow rounded-3 rotate-130 position-absolute bottom-0 start-50 ms-5 mb-2 d-none d-lg-block">
-						<img src="{% static 'home/assets/images/client/figma.svg' %}" class="h-20px" alt="Icon">
-					</div>
-					<!-- Icon logos END -->
-
-					<div class="row">
-						<div class="col-md-8 mx-auto text-center py-5 position-relative">
-							<!-- Title -->
-							<h2>Subscribe to our Newsletter for Newest Course Updates</h2>
-							<!-- Form -->
-							<form class="row align-items-center justify-content-center mt-3">
-								<div class="col-lg-8">
-									<div class="bg-body shadow rounded-pill p-2">
-										<div class="input-group">
-											<input class="form-control border-0 me-1" type="email" placeholder="Enter your email">
-											<button type="button" class="btn btn-blue mb-0 rounded-pill">Subscribe!</button>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div> <!-- Row END -->
-				</div>
-			</div>
-		</div> <!-- Row END -->
-	</div>
-</section>
 <!-- =======================
 Newsletter END -->
 
@@ -934,81 +838,12 @@ Newsletter END -->
 
 <!-- =======================
 Footer START -->
-<footer class="pt-0 bg-blue rounded-4 position-relative mx-2 mx-md-4 mb-3">
-	<!-- SVG decoration for curve -->
-	<figure class="mb-0">
-		<svg class="fill-body rotate-180" width="100%" height="150" viewbox="0 0 500 150" preserveaspectratio="none">
-			<path d="M0,150 L0,40 Q250,150 500,40 L580,150 Z"></path>
-		</svg>
-	</figure>
 
-	<div class="container">
-		<div class="row mx-auto">
-			<div class="col-lg-6 mx-auto text-center my-5">
-				<!-- Logo -->
-				<img class="mx-auto h-40px" src="{% static 'home/assets/images/logo-light.svg' %}" alt="logo">
-				<p class="mt-3 text-white">Eduport education theme, built specifically for the education centers which is dedicated to teaching and involving learners.</p>
-				<!-- Links -->
-        <ul class="nav justify-content-center text-primary-hover mt-3 mt-md-0">
-          <li class="nav-item"><a class="nav-link text-white" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Terms</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Privacy</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Career</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="#">Contact us</a></li>
-          <li class="nav-item"><a class="nav-link text-white pe-0" href="#">Cookies</a></li>
-        </ul>
-				<!-- Social media button -->
-				<ul class="list-inline mt-3 mb-0">
-					<li class="list-inline-item"> 
-						<a class="btn btn-white btn-sm shadow px-2 text-facebook" href="#">
-							<i class="fab fa-fw fa-facebook-f"></i>
-						</a> 
-					</li>
-					<li class="list-inline-item"> 
-						<a class="btn btn-white btn-sm shadow px-2 text-instagram" href="#">
-							<i class="fab fa-fw fa-instagram"></i>
-						</a> 
-					</li>
-					<li class="list-inline-item"> 
-						<a class="btn btn-white btn-sm shadow px-2 text-twitter" href="#">
-							<i class="fab fa-fw fa-twitter"></i>
-						</a> 
-					</li>
-					<li class="list-inline-item"> 
-						<a class="btn btn-white btn-sm shadow px-2 text-linkedin" href="#">
-							<i class="fab fa-fw fa-linkedin-in"></i>
-						</a> 
-					</li>
-				</ul>
-				<!-- Bottom footer link -->
-				<div class="mt-3 text-white">©2021 <a href="index-3.htm" class="text-reset btn-link text-primary-hover" target="_blank">Eduport</a>. All rights reserved. </div>
-			</div>
-		</div>
-	</div>
-</footer>
 <!-- =======================
 Footer END -->
 
 <!-- Cookie alert box START -->
-<div class="alert alert-light fade show position-fixed start-0 bottom-0 z-index-99 rounded-3 shadow p-4 ms-3 mb-3 col-10 col-md-4 col-lg-3 col-xxl-2" role="alert">
-	<div class="text-dark text-center">	
-		<!-- Image -->
-		<img src="{%  static 'home/assets/images/logo.jpg' %}" class="h-50px mb-3" alt="cookie">
-		<!-- Content -->
-		<p class="mb-0">
-			ذخیره سازی کوکی 
-			<a class="text-dark" href="#"><u> </u></a></p>
-		<!-- Buttons -->
-		<div class="mt-3">
-			<button type="button" class="btn btn-success-soft btn-sm mb-0" data-bs-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">پذیرش</span>
-			</button>
-			<button type="button" class="btn btn-danger-soft btn-sm mb-0" data-bs-dismiss="alert" aria-label="Close">
-				<span aria-hidden="true">رد</span>
-			</button>
-		</div>
-	</div>
-</div>
+    {% include 'home/cookies.html' %}
 <!-- Cookie alert box END -->
 
 <!-- Back to top -->

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import AboutUs , FAQ , ContactUs
+from .models import AboutUs , FAQ , ContactUs , Supporter
+from django.utils.html import format_html
 # Register your models here.
 @admin.register(AboutUs)
 class AboutUsAdmin(admin.ModelAdmin):
@@ -7,9 +8,20 @@ class AboutUsAdmin(admin.ModelAdmin):
 
 
 
+
+@admin.register(Supporter)
+class SupporterAdmin(admin.ModelAdmin) :
+    list_display = ('name' ,  )
+
+
+
+
+
 @admin.register(FAQ)
 class FAQAdmin(admin.ModelAdmin):
     list_display = ('title' , )
+
+
 
 @admin.register(ContactUs)
 class ContactUsAdmin(admin.ModelAdmin) :

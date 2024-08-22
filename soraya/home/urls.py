@@ -7,8 +7,8 @@ app_name = 'home'
 
 urlpatterns = [
 
-    path('home/' , HomeView.as_view() , name = 'home' ) ,
-    path('' , AboutUserView.as_view() , name = 'aboutus' ) ,
+    path('' , HomeView.as_view() , name = 'home' ) ,
+    path('aboutus/' , AboutUserView.as_view() , name = 'aboutus' ) ,
     path('faq/' , FAQView.as_view() , name="faq" ) ,
     path('contactus/' , ContactUsView.as_view() , name='contactus' )  ,
 

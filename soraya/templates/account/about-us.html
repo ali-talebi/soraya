@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 <!doctype html>
 <html>
 
@@ -22,8 +22,8 @@
 <section class="page-top rt-relative rt rt-align about-titlez">
 <div class="main">
 <div class="rt rt-relative rt-z-index rellax" data-rellax-percentage="0.7">
-<h1 class="rt-800 rt rt-fff rt-35">درباره ما</h1>
-<div class="desc rt-15 rt rt-fff rt-op">مدرسه بوعلی سینا </div>
+<h1 class="rt-800 rt rt-fff rt-35">{{data.title}} </h1>
+<div class="desc rt-15 rt rt-fff rt-op"> مبتنی بر هوشمندی  </div>
 </div>
 </div>
 </section>
@@ -45,7 +45,7 @@
                         <!-- Begin Target-Titles -->
                         <div class="Target-Title Title1">
                             <i class="fa fa-bullseye"></i>
-                            <span>آموزش رایگان</span>
+                            <span>آموزش هوشمند </span>
                         </div>
                         <div class="Target-Title Title2">
                             <i class="fa fa-bullseye"></i>
@@ -83,35 +83,13 @@
 </p>
 </div>
 </section>
-
+<!--
 <section class="last-comments rt rt-relative">
 <div class="rt rt-relative owl-carousel slider-11 rt-overflow">
 
-<div class="item rt-fff rt rt-relative">
-<div class="main rt-relative rt-align">
-<img src="{% static 'account/images/16.jpg' %}" height="100" class="rt-50px">
-<div class="name">
-<h3 class="rt rt-20 rt-bold">رامین دانشور</h3>
-<h3 class="rt rt-14 rt-op rt-medium">مهندس عمران</h3>
-</div>
-<div class="inside rt-16 rt-center rt-overflow left">
-<p><i class="fa fa-quote-right icon"></i> سلام، من امروز "از طریق کمپین آخر زمین" با گروه و سایتتون آشنا شدم. خیلی خوشحال شدم که استارتاپ ایرانی ای به زبان فارسی پایه گذاری شده که داره "سالم و حرفه ای" به چنین موضوعی می پردازه... من به شخصه از فالورهای شما خواهم بود و مطمئنن برای خیلی های دیگه همین اندازه جذاب خواهد بود. این رو صرفا نوشتم که فیدبک مثبتم رو به گوش شما رسونده باشم بلکه امیدبخش و انرژی ده <i class="fa fa-quote-left icon"></i></p>
-</div>
-</div>
-</div>
 
-<div class="item rt-fff rt rt-relative">
-<div class="main rt-relative rt-align">
-<img src="{% static 'account/images/17.jpg'%}" height="100" class="rt-50px">
-<div class="name">
-<h3 class="rt rt-20 rt-bold">زیبا گلرخ</h3>
-<h3 class="rt rt-14 rt-op rt-medium">مهندس کامپیوتر</h3>
-</div>
-<div class="inside rt-16 rt-center rt-overflow left">
-<p><i class="fa fa-quote-right icon"></i> سلام، من امروز "از طریق کمپین آخر زمین" با گروه و سایتتون آشنا شدم. خیلی خوشحال شدم که استارتاپ ایرانی ای به زبان فارسی پایه گذاری شده که داره "سالم و حرفه ای" به چنین موضوعی می پردازه... من به شخصه از فالورهای شما خواهم بود و مطمئنن برای خیلی های دیگه همین اندازه جذاب خواهد بود. این رو صرفا نوشتم که فیدبک مثبتم رو به گوش شما رسونده باشم بلکه امیدبخش و انرژی ده <i class="fa fa-quote-left icon"></i></p>
-</div>
-</div>
-</div>
+
+
 
 <div class="item rt-fff rt rt-relative">
 <div class="main rt-relative rt-align">
@@ -127,7 +105,9 @@
 </div>
 
 </div>
+
 </div>
+-->
 </section>
 
 <section class="about-us-box rt-overflow rt">
@@ -157,7 +137,7 @@
 
 <div class="item right">
 <img src="{%  static 'account/images/f2.png' %}">
-<h4 class="rt rt-sorme rt-20 rt-bold">تعصب و تعهد</h4>
+<h4 class="rt rt-sorme rt-20 rt-bold"> ارتقا علمی کشور  </h4>
 </div>
 
 <div class="item right">
@@ -172,10 +152,10 @@
 <section class="about-us-box endword rt">
 <div class="main">
 <div class="side1 right pic">
-<img style="width: 200px;height: 200px" src="{%  static 'home/img/general/logo.jpg' %}" class="rt">
+<img style="width: 200px;height: 200px" src="{%  static 'home/assets/images/logo.jpg' %}" class="rt">
 </div>
 <div class="side1 left text-about">
-<h3 class="about-title rt-800 rt rt-33 rt-sorme">سخن <span class="rt-rang rt-800">آخر</span></h3>
+<h3 class="about-title rt-800 rt rt-33 rt-sorme"> محورهای  <span class="rt-rang rt-800"> آموزشی   </span></h3>
 <p class="rt rt-16 rt-444" style="margin-bottom:5px">
     {{ data.text3|safe }}
 </p>
@@ -218,7 +198,7 @@ nav:true,
 margin:0,
 items:1
 })
-var rellax = new Rellax('.rellax'); 
+var rellax = new Rellax('.rellax');
 </script>
 </body>
 
