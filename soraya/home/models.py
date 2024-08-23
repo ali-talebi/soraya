@@ -1,6 +1,22 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 # Create your models here.
+
+
+
+class MainSlider(models.Model) :
+    name = models.CharField(verbose_name = "نام تصویر" , max_length = 100 )
+    picture = models.FileField(verbose_name = 'تصویر'  , upload_to = 'MainSlider/' )
+
+    def __str__(self) :
+        return self.name
+
+
+    class Meta :
+        db_table = 'MainSlider'
+        verbose_name_plural = 'تصاویر اسلایدر ابتدایی'
+
+
 class AboutUs(models.Model) :
     title = models.CharField(max_length=100 , verbose_name='درباره ما' )
     picture = models.FileField(upload_to='AboutUs/', verbose_name='تصویر درباره ما' )

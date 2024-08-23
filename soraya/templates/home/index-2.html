@@ -11,7 +11,7 @@
 	<meta name="description" content="Eduport- LMS, Education and Course Theme">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="{%  static 'home/assets/images/logo.jpg' %}">
+	<link rel="shortcut icon"  href="{%  static 'home/assets/images/logo.jpg' %}">
 
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,6 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'home/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'home/assets/vendor/tiny-slider/tiny-slider.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'home/assets/vendor/glightbox/css/glightbox.css' %}">
-
 
 
 	<!-- Theme CSS -->
@@ -54,7 +53,10 @@
 				<div class="dropdown me-3">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdownLanguage" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe me-2"></i>Language</a>
 					<div class="dropdown-menu mt-2 min-w-auto shadow" aria-labelledby="dropdownLanguage">
-						<a class="dropdown-item me-4" href="#"><img style="width:10px;heigth:10px" class="fa-fw me-2" src="{% static 'home/assets/images/flags/sec08.png' %}" alt="">persian</a>
+						<a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{% static 'home/assets/images/flags/uk.svg' %}" alt="">English</a>
+						<a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{% static 'home/assets/images/flags/sp.svg' %}" alt="">Español</a>
+						<a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{% static 'home/assets/images/flags/fr.svg' %}" alt="">Français</a>
+						<a class="dropdown-item me-4" href="#"><img class="fa-fw me-2" src="{% static 'home/assets/images/flags/gr.svg' %}" alt="">Deutsch</a>
 					</div>
 				</div>
 
@@ -72,217 +74,7 @@
 <!-- Top header END -->
 
 <!-- Header START -->
-<header class="navbar-light header-static navbar-sticky">
-	<!-- Logo Nav START -->
-	<nav class="navbar navbar-expand-xl">
-		<div class="container">
-			<!-- Logo START -->
-			<a class="navbar-brand me-0" href="index.html">
-				<img class="light-mode-item navbar-brand-item" src="{%  static 'home/assets/images/logo.jpg' %}" alt="logo">
-				<img class="dark-mode-item navbar-brand-item" src="{%  static 'home/assets/images/logo.jpg' %}" alt="logo">
-			</a>
-			<!-- Logo END -->
-
-			<!-- Responsive navbar toggler -->
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-animation">
-					<span></span>
-					<span></span>
-					<span></span>
-				</span>
-			</button>
-
-			<!-- Main navbar START -->
-			<div class="navbar-collapse collapse" id="navbarCollapse">
-
-				<!-- Nav Search END -->
-				<ul class="navbar-nav navbar-nav-scroll mx-auto">
-					<!-- Nav item 1 Demos -->
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle active" href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">خانه</a>
-						<ul class="dropdown-menu" aria-labelledby="demoMenu">
-
-							<li> <a class="dropdown-item active" href="{% url 'home:home' %}">خانه</a></li>
-
-							<li> <hr class="dropdown-divider"></li>
-
-						</ul>
-					</li>
-
-					<!-- Nav item 2 Pages -->
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">دسترسی ها</a>
-						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
-							<!-- Dropdown submenu -->
-							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">دوره ها </a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="">Course Grid Classic</a></li>
-								</ul>
-							</li>
-
-							<!-- Dropdown submenu -->
-							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">درباره ما </a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="{% url 'home:aboutus' %}">درباره ما</a></li>
-
-								</ul>
-							</li>
-
-
-
-							<!-- Dropdown submenu -->
-							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">احراز هویت </a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-								    {% if user.is_authenticated %}
-								        <li> <a class="dropdown-item" href="{% url 'account:logout' %}">خروج</a></li>
-								    {% else %}
-									    <li> <a class="dropdown-item" href="{% url 'account:login' %}">ورود</a></li>
-									    <li> <a class="dropdown-item" href="{% url 'account:signup' %}">ثبت نام </a></li>
-									    <li> <a class="dropdown-item" href="">فراموشی رمز </a></li>
-
-									{% endif %}
-								</ul>
-							</li>
-
-							<li> <a class="dropdown-item" href="{% url 'home:faq' %}">سوالات پر تکرار</a></li>
-
-						</ul>
-					</li>
-
-					<!-- Nav item 3 Account -->
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">حساب کاربری</a>
-						<ul class="dropdown-menu" aria-labelledby="accounntMenu">
-							<!-- Dropdown submenu -->
-							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-tie fa-fw me-1"></i>کارمندان</a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-									<li> <a class="dropdown-item" href=""><i class="bi bi-grid-fill fa-fw me-1"></i>معلمین</a> </li>
-
-								</ul>
-							</li>
-
-							<!-- Dropdown submenu -->
-								<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-graduate fa-fw me-1"></i>دانش آموز</a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="student-dashboard.html"><i class="bi bi-grid-fill fa-fw me-1"></i>داشبورد</a> </li>
-
-
-								</ul>
-							</li>
-                            {% if user.is_authenticated %}
-
-							<li> <hr class="dropdown-divider"></li>
-							<li> <a class="dropdown-item" href="instructor-edit-profile.html"><i class="fas fa-fw fa-edit me-1"></i> ویرایش پروفایل </a> </li>
-							<li> <a class="dropdown-item" href="instructor-setting.html"><i class="fas fa-fw fa-cog me-1"></i>تنظیمات</a> </li>
-							{% endif%}
-						</ul>
-					</li>
-
-					<!-- Nav item 4 Component-->
-
-
-					<!-- Nav item 5 link-->
-					<li class="nav-item dropdown">
-						<a class="nav-link" href="#" id="advanceMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fas fa-ellipsis-h"></i>
-						</a>
-						<ul class="dropdown-menu dropdown-menu-end min-w-auto" data-bs-popper="none">
-							<li>
-								<a class="dropdown-item" href="" target="_blank">
-									<i class="text-warning fa-fw bi bi-life-preserver me-2"></i>پشتیبانی
-								</a>
-							</li>
-
-							<li> <hr class="dropdown-divider"></li>
-
-
-						</ul>
-					</li>
-				</ul>
-			</div>
-			<!-- Main navbar END -->
-
-			<!-- Nav Search START -->
-			<div class="nav-item dropdown nav-search px-1 px-lg-3">
-				<a class="nav-link" role="button" href="#" id="navSearch" data-bs-toggle="dropdown" aria-expanded="true" data-bs-auto-close="outside" data-bs-display="static">
-					<i class="bi bi-search fs-4"> </i>
-				</a>
-				<div class="dropdown-menu dropdown-menu-end shadow rounded p-2" aria-labelledby="navSearch" data-bs-popper="none">
-					<form class="input-group">
-						<input class="form-control border-primary" type="search" placeholder="جستجو" aria-label="Search">
-						<button class="btn btn-primary m-0" type="submit">جستجو</button>
-					</form>
-
-					<!-- Recent search -->
-					<ul class="list-group list-group-borderless p-2 small">
-						<li class="list-group-item d-flex justify-content-between align-items-center">
-							<span class="fw-bold">جستجو های اخیر </span>
-							<button class="btn btn-sm btn-link mb-0 px-0">پاک کردن </button>
-						</li>
-						<li class="list-group-item text-primary-hover text-truncate">
-							<a href="#" class="text-body"> <i class="far fa-clock me-1"></i>Digital marketing course for Beginner</a>
-						</li>
-
-					</ul>
-				</div>
-			</div>
-			<!-- Nav Search END -->
-
-      <!-- Profile START -->
-			<div class="dropdown ms-1 ms-lg-0">
-				<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-					<img class="avatar-img rounded-circle" src="{%  static 'home/assets/images/logo.jpg' %}" alt="avatar">
-				</a>
-				<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
-					<!-- Profile info -->
-					<li class="px-3">
-						<div class="d-flex align-items-center">
-							<!-- Avatar -->
-							<div class="avatar me-3">
-								<img class="avatar-img rounded-circle shadow" src="{%  static 'home/assets/images/logo.jpg' %}" alt="avatar">
-							</div>
-							<div>
-							    {% if user.is_authenticated  %}
-								<a class="h6" href="#">user.email</a>
-								{% else %}
-								<a class="h6" href="#">هنوز وارد نشدید</a>
-								{% endif %}
-							</div>
-						</div>
-						<hr>
-					</li>
-					<!-- Links -->
-
-					<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i> پشتیبانی </a></li>
-                    {% if user.is_authenticated %}
-
-					<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i> ویرایش پروفایل </a></li>
-					<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i> تنظیمات حساب کاربری  </a></li>
-					<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>خروج</a></li>
-					{% endif %}
-					<li> <hr class="dropdown-divider"></li>
-					<!-- Dark mode switch START -->
-					<li>
-						<div class="modeswitch-wrap" id="darkModeSwitch">
-							<div class="modeswitch-item">
-								<div class="modeswitch-icon"></div>
-							</div>
-							<span>Dark mode</span>
-						</div>
-					</li>
-          <!-- Dark mode switch END -->
-				</ul>
-			</div>
-			<!-- Profile START -->
-		</div>
-	</nav>
-	<!-- Logo Nav END -->
-</header>
+    {% include 'home/main_navbar.html' %}
 <!-- Header END -->
 
 <!-- **************** MAIN CONTENT START **************** -->
@@ -290,7 +82,7 @@
 
 <!-- =======================
 Main Banner START -->
-<section class="pt-0 position-relative overflow-hidden h-700px h-sm-600px h-lg-700px rounded-top-4 mx-2 mx-md-4" style="background-image:url('{% static 'home/assets/images/bg/01.jpg' %}'); background-position: center; background-size: cover;">
+<section class="pt-0 position-relative overflow-hidden h-700px h-sm-600px h-lg-700px rounded-top-4 mx-2 mx-md-4" style="background-image:url({{picture_slider.picture.url}}); background-position: center; background-size: cover;">
 	<div class="bg-overlay bg-dark opacity-5"></div>
 	<!-- SVG decoration for curve -->
 	<figure class="position-absolute bottom-0 left-0 w-100 d-md-block mb-n3 z-index-9">
@@ -356,7 +148,7 @@ Client START -->
 					<div class="tiny-slider-inner" data-arrow="false" data-dots="false" data-gutter="80" data-items-xl="6" data-items-lg="5" data-items-md="4" data-items-sm="3" data-items-xs="2" data-autoplay="2000">
 						<!-- Slide item START -->
 						{% for img in supporter %}
-						<div class="item"> <img  style="width:75px;heigth:75px" class="grayscale" src="{{img.picture.url}}" alt="{{img.name}}"> </div>
+						<div class="item"> <img  style="width:100px;heigth:100px;border-radius:10%" class="grayscale" src="{{img.picture.url}}" alt="{{img.name}}"> </div>
                         {% endfor %}
 						<!-- Slide item END -->
 					</div>
@@ -393,7 +185,7 @@ About START -->
 					<!-- Item -->
 					<div class="col-sm-6">
 						<div class="icon-lg bg-info bg-opacity-10 text-info rounded-2"><i class="fas fa-book fs-5"></i></div>
-						<h5 class="mt-2">یادگیری همه چیز </h5>
+						<h5 class="mt-2"> همراه با مدرک آموزش و پرورش جمهوری اسلامی </h5>
 						<p class="mb-0">
 							مدرسه بوعلی سینا
 						</p>
@@ -424,29 +216,30 @@ About END -->
 
 <!-- =======================
 Trending courses START -->
-<section class="pt-0 pt-md-5">
+<section class="pt-0 pt-md-5" dir="rtl">
 	<div class="container">
 		<!-- Title -->
 		<div class="row">
-			<div class="col-lg-8 mb-4">
-				<h2 class="mb-0"> <span class="text-warning"> </span>  بهترین دوره های ما  </h2>
+			<div class="col-lg-8 mb-4" dir="rtl">
+				<h2 class="mb-0"> <span class="text-warning"> </span>  وبلاگ ما      </h2>
 				<p class="mb-0">Check out most 🔥 courses in the market</p>
 			</div>
 		</div>
 
 		<div class="row g-4">
+            {% for i in blogs %}
 			<!-- Card Item START -->
 			<div class="col-md-6 col-xl-4">
 				<div class="card p-2 shadow h-100">
 					<div class="rounded-top overflow-hidden">
 						<div class="card-overlay-hover">
 							<!-- Image -->
-							<img src="{% static 'home/assets/images/courses/4by3/17.jpg' %}" class="card-img-top" alt="course image">
+							<img  src="{{i.picture.url}}" class="card-img-top" alt="course image">
 						</div>
 						<!-- Hover element -->
 						<div class="card-img-overlay">
 							<div class="card-element-hover d-flex justify-content-end">
-								<a href="#" class="icon-md bg-white rounded-circle text-center">
+								<a href="{{i.get_absolute_url}}" class="icon-md bg-white rounded-circle text-center">
 									<i class="fas fa-shopping-cart text-danger"></i>
 								</a>
 							</div>
@@ -471,16 +264,16 @@ Trending courses START -->
 							</ul>
 							<!-- Avatar -->
 							<div class="avatar avatar-sm">
-								<img class="avatar-img rounded-circle" src="{% static 'home/assets/images/avatar/09.jpg' %}" alt="avatar">
+								<img class="avatar-img rounded-circle" src="{{i.author.picture.url}}" alt="avatar">
 							</div>
 						</div>
 						<!-- Divider -->
 						<hr>
 						<!-- Title -->
-						<h5 class="card-title"><a href="#">The Complete Digital Marketing Course - 12 Courses in 1</a></h5>
+						<h5 class="card-title"><a href="{{i.get_absolute_url}}">{{i.name}}</a></h5>
 						<!-- Badge and Price -->
 						<div class="d-flex justify-content-between align-items-center mb-0">
-							<a href="#" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> Personal Development </a>
+							<a href="#" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> {{i.category}} </a>
 							<!-- Price -->
 							<h3 class="text-success mb-0">$140</h3>
 						</div>
@@ -488,114 +281,8 @@ Trending courses START -->
 				</div>
 			</div>
 			<!-- Card Item END -->
+            {% endfor %}
 
-			<!-- Card Item START -->
-			<div class="col-md-6 col-xl-4">
-				<div class="card p-2 shadow h-100">
-					<div class="rounded-top overflow-hidden">
-						<div class="card-overlay-hover">
-							<!-- Image -->
-							<img src="{% static 'home/assets/images/courses/4by3/18.jpg' %}" class="card-img-top" alt="course image">
-						</div>
-						<!-- Hover element -->
-						<div class="card-img-overlay">
-							<div class="card-element-hover d-flex justify-content-end">
-								<a href="#" class="icon-md bg-white rounded-circle text-center">
-									<i class="fas fa-shopping-cart text-danger"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-					<!-- Card body -->
-					<div class="card-body">
-						<!-- Rating and avatar -->
-						<div class="d-flex justify-content-between">
-							<!-- Rating and info -->
-							<ul class="list-inline hstack gap-2 mb-0">
-								<!-- Info -->
-								<li class="list-inline-item d-flex justify-content-center align-items-center">
-									<div class="icon-md bg-orange bg-opacity-10 text-orange rounded-circle"><i class="fas fa-user-graduate"></i></div>
-									<span class="h6 fw-light mb-0 ms-2">2.5k</span>
-								</li>
-								<!-- Rating -->
-								<li class="list-inline-item d-flex justify-content-center align-items-center">
-									<div class="icon-md bg-warning bg-opacity-15 text-warning rounded-circle"><i class="fas fa-star"></i></div>
-									<span class="h6 fw-light mb-0 ms-2">3.6</span>
-								</li>
-							</ul>
-							<!-- Avatar -->
-							<div class="avatar avatar-sm">
-								<img class="avatar-img rounded-circle" src="{% static 'home/assets/images/avatar/07.jpg' %}" alt="avatar">
-							</div>
-						</div>
-						<!-- Divider -->
-						<hr>
-						<!-- Title -->
-						<h5 class="card-title"><a href="#">Fundamentals of Business Analysis</a></h5>
-						<!-- Badge and Price -->
-						<div class="d-flex justify-content-between align-items-center mb-0">
-							<a href="#" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> Business Development </a>
-							<!-- Price -->
-							<h3 class="text-success mb-0">$160</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card Item END -->
-
-			<!-- Card Item START -->
-			<div class="col-md-6 col-xl-4">
-				<div class="card p-2 shadow h-100">
-					<div class="rounded-top overflow-hidden">
-						<div class="card-overlay-hover">
-							<!-- Image -->
-							<img src="{% static 'home/assets/images/courses/4by3/21.jpg' %}" class="card-img-top" alt="course image">
-						</div>
-						<!-- Hover element -->
-						<div class="card-img-overlay">
-							<div class="card-element-hover d-flex justify-content-end">
-								<a href="#" class="icon-md bg-white rounded-circle text-center">
-									<i class="fas fa-shopping-cart text-danger"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-					<!-- Card body -->
-					<div class="card-body">
-						<!-- Rating and avatar -->
-						<div class="d-flex justify-content-between">
-							<!-- Rating and info -->
-							<ul class="list-inline hstack gap-2 mb-0">
-								<!-- Info -->
-								<li class="list-inline-item d-flex justify-content-center align-items-center">
-									<div class="icon-md bg-orange bg-opacity-10 text-orange rounded-circle"><i class="fas fa-user-graduate"></i></div>
-									<span class="h6 fw-light mb-0 ms-2">6k</span>
-								</li>
-								<!-- Rating -->
-								<li class="list-inline-item d-flex justify-content-center align-items-center">
-									<div class="icon-md bg-warning bg-opacity-15 text-warning rounded-circle"><i class="fas fa-star"></i></div>
-									<span class="h6 fw-light mb-0 ms-2">3.8</span>
-								</li>
-							</ul>
-							<!-- Avatar -->
-							<div class="avatar avatar-sm">
-								<img class="avatar-img rounded-circle" src="{% static 'home/assets/images/avatar/05.jpg' %}" alt="avatar">
-							</div>
-						</div>
-						<!-- Divider -->
-						<hr>
-						<!-- Title -->
-						<h5 class="card-title"><a href="#">Google Ads Training: Become a PPC Expert</a></h5>
-						<!-- Badge and Price -->
-						<div class="d-flex justify-content-between align-items-center mb-0">
-							<a href="#" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> SEO </a>
-							<!-- Price -->
-							<h3 class="text-success mb-0">$226</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card Item END -->
 
 
 
@@ -611,7 +298,7 @@ Trending courses END -->
 
 <!-- =======================
 Video divider START -->
-<section class="bg-light position-relative">
+<section class="bg-light position-relative" dir="rtl">
 	<!-- SVG decoration -->
 	<figure class="position-absolute bottom-0 start-0 d-none d-lg-block">
 		<svg width="822.2px" height="301.9px" viewbox="0 0 822.2 301.9">
@@ -652,12 +339,12 @@ Video divider START -->
 				</figure>
 
 				<!-- Title -->
-				<h2 class="h1">از هرجایی میخوای مطلعه کن از هر کجای دنیا </h2>
+				<h2 class="h1"> مطالعه هوشمند  و منعطف  </h2>
 			</div>
 
 			<div class="col-lg-5 position-relative mt-4 mt-lg-0">
 				<!-- Image -->
-				<img src="assets/images/about/04.jpg" class="border border-5 border-white rounded-2" alt="">
+				<img style="border-radius:10%" src="{% static 'home/assets/images/about/04.jpg' %}" class="border border-5 border-white rounded-2" alt="">
 				<div class="position-absolute top-50 start-50 translate-middle">
 					<!-- Video link -->
 					<a href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn text-danger btn-round btn-white-shadow btn-lg mb-0" data-glightbox="" data-gallery="video-tour">
@@ -677,12 +364,41 @@ Event START -->
 	<div class="container">
 		<!-- Title -->
 		<div class="row mb-4">
-			<h2 class="mb-0">Upcoming <span class="text-warning">Education</span> Events</h2>
+			<h2 class="mb-0">رویداد های ما</h2>
 		</div>
 		<div class="row">
 			<!-- Slider START -->
 			<div class="tiny-slider arrow-round arrow-creative arrow-blur arrow-hover">
 				<div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-dots="false" data-items-xl="3" data-items-md="2" data-items-xs="1">
+
+                    {% for i in blogs %}
+					<!-- Card item START -->
+					<div class="card">
+						<div class="position-relative">
+							<!-- Image -->
+							<img style="width:300px;height:300px" src="{{i.picture.url}}" class="card-img" alt="course image">
+							<!-- Overlay -->
+							<div class="card-img-overlay d-flex align-items-start flex-column p-3">
+								<div class="w-100 mt-auto">
+									<!-- Category -->
+									<a href="#" class="badge text-dark bg-white fs-6 rounded-1"><i class="far fa-calendar-alt text-orange me-2"></i>{{i.times}}</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body px-2">
+							<!-- Title -->
+							<h5 class="card-title"><a href="#">{{i.name}}</a></h5>
+							<!-- Address and button -->
+							<div class="d-flex justify-content-between align-items-center">
+								<address class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Mumbai</address>
+								<a href="#" class="btn btn-sm btn-primary-soft mb-0">Join now</a>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+					{% endfor %}
 
 					<!-- Card item START -->
 					<div class="card">
@@ -711,113 +427,6 @@ Event START -->
 					</div>
 					<!-- Card item END -->
 
-					<!-- Card item START -->
-					<div class="card">
-						<div class="position-relative">
-							<!-- Image -->
-							<img src="{% static 'home/assets/images/courses/4by3/16.jpg' %}" class="card-img" alt="course image">
-							<!-- Overlay -->
-							<div class="card-img-overlay d-flex align-items-start flex-column p-3">
-								<div class="w-100 mt-auto">
-									<!-- Category -->
-									<a href="#" class="badge text-dark bg-white fs-6 rounded-1"><i class="far fa-calendar-alt text-orange me-2"></i>Tomorrow</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Card body -->
-						<div class="card-body px-2">
-							<!-- Title -->
-							<h5 class="card-title"><a href="#">International Conference on Information Technology</a></h5>
-							<!-- Address and button -->
-							<div class="d-flex justify-content-between align-items-center">
-								<address class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>New york</address>
-								<a href="#" class="btn btn-sm btn-primary-soft mb-0">Join now</a>
-							</div>
-						</div>
-					</div>
-					<!-- Card item END -->
-
-					<!-- Card item START -->
-					<div class="card">
-						<div class="position-relative">
-							<!-- Image -->
-							<img src="assets/images/courses/4by3/18.jpg" class="card-img" alt="course image">
-							<!-- Overlay -->
-							<div class="card-img-overlay d-flex align-items-start flex-column p-3">
-								<div class="w-100 mt-auto">
-									<!-- Category -->
-									<a href="#" class="badge text-dark bg-white fs-6 rounded-1"><i class="far fa-calendar-alt text-orange me-2"></i>2 July 2022</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Card body -->
-						<div class="card-body px-2">
-							<!-- Title -->
-							<h5 class="card-title"><a href="#">UK Demo Day 2022</a></h5>
-							<!-- Address and button -->
-							<div class="d-flex justify-content-between align-items-center">
-								<address class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>California</address>
-								<a href="#" class="btn btn-sm btn-primary-soft mb-0">Join now</a>
-							</div>
-						</div>
-					</div>
-					<!-- Card item END -->
-
-					<!-- Card item START -->
-					<div class="card">
-						<div class="position-relative">
-							<!-- Image -->
-							<img src="assets/images/courses/4by3/17.jpg" class="card-img" alt="course image">
-							<!-- Overlay -->
-							<div class="card-img-overlay d-flex align-items-start flex-column p-3">
-								<div class="w-100 mt-auto">
-									<!-- Category -->
-									<a href="#" class="badge text-dark bg-white fs-6 rounded-1"><i class="far fa-calendar-alt text-orange me-2"></i>29 September 2021</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Card body -->
-						<div class="card-body px-2">
-							<!-- Title -->
-							<h5 class="card-title"><a href="#">Personality Development Tour</a></h5>
-							<!-- Address and button -->
-							<div class="d-flex justify-content-between align-items-center">
-								<address class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>London</address>
-								<a href="#" class="btn btn-sm btn-primary-soft mb-0">Join now</a>
-							</div>
-						</div>
-					</div>
-					<!-- Card item END -->
-
-					<!-- Card item START -->
-					<div class="card">
-						<div class="position-relative">
-							<!-- Image -->
-							<img src="assets/images/courses/4by3/19.jpg" class="card-img" alt="course image">
-							<!-- Overlay -->
-							<div class="card-img-overlay d-flex align-items-start flex-column p-3">
-								<div class="w-100 mt-auto">
-									<!-- Category -->
-									<a href="#" class="badge text-success bg-white fs-6 rounded-1"><i class="fas fa-circle text-success me-2"></i>Live</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Card body -->
-						<div class="card-body px-2">
-							<!-- Title -->
-							<h5 class="card-title"><a href="#">Global Education Fall Meeting for Everyone</a></h5>
-							<!-- Address and button -->
-							<div class="d-flex justify-content-between align-items-center">
-								<address class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Delhi</address>
-								<a href="#" class="btn btn-sm btn-primary-soft mb-0">Join now</a>
-							</div>
-						</div>
-					</div>
-					<!-- Card item END -->
 
 				</div>
 			</div>

@@ -1,0 +1,228 @@
+{% load static %}
+<header class="navbar-light header-static navbar-sticky">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand me-0" href="{% url 'home:home' %}">
+				<img class="light-mode-item navbar-brand-item" src="{%  static 'home/assets/images/logo.jpg' %}" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="{%  static 'home/assets/images/logo.jpg' %}" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-animation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse collapse" id="navbarCollapse">
+
+				<!-- Nav Search END -->
+				<ul class="navbar-nav navbar-nav-scroll mx-auto">
+					<!-- Nav item 1 Demos -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle active" href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">خانه</a>
+						<ul class="dropdown-menu" aria-labelledby="demoMenu">
+
+							<li> <a class="dropdown-item active" href="{% url 'home:home' %}">خانه</a></li>
+
+							<li> <hr class="dropdown-divider"></li>
+
+						</ul>
+					</li>
+
+					<!-- Nav item 2 Pages -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">دسترسی ها</a>
+						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">دوره ها </a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="">Course Grid Classic</a></li>
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">درباره ما </a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="{% url 'home:aboutus' %}">درباره ما</a></li>
+
+								</ul>
+							</li>
+
+
+
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">احراز هویت </a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+								    {% if user.is_authenticated %}
+								        <li> <a class="dropdown-item" href="{% url 'account:logout' %}">خروج</a></li>
+								    {% else %}
+									    <li> <a class="dropdown-item" href="{% url 'account:login' %}">ورود</a></li>
+									    <li> <a class="dropdown-item" href="{% url 'account:signup' %}">ثبت نام </a></li>
+									    <li> <a class="dropdown-item" href="">فراموشی رمز </a></li>
+
+									{% endif %}
+								</ul>
+							</li>
+
+							<li> <a class="dropdown-item" href="{% url 'home:faq' %}">سوالات پر تکرار</a></li>
+
+						</ul>
+					</li>
+
+					<!-- Nav item 3 Account -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">حساب کاربری</a>
+						<ul class="dropdown-menu" aria-labelledby="accounntMenu">
+							<!-- Dropdown submenu -->
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-tie fa-fw me-1"></i>کارمندان</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href=""><i class="bi bi-grid-fill fa-fw me-1"></i>معلمین</a> </li>
+
+								</ul>
+							</li>
+
+							<!-- Dropdown submenu -->
+								<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-graduate fa-fw me-1"></i>دانش آموز</a>
+								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="student-dashboard.html"><i class="bi bi-grid-fill fa-fw me-1"></i>داشبورد</a> </li>
+
+
+								</ul>
+							</li>
+                            {% if user.is_authenticated %}
+
+							<li> <hr class="dropdown-divider"></li>
+							<li> <a class="dropdown-item" href="instructor-edit-profile.html"><i class="fas fa-fw fa-edit me-1"></i> ویرایش پروفایل </a> </li>
+							<li> <a class="dropdown-item" href="instructor-setting.html"><i class="fas fa-fw fa-cog me-1"></i>تنظیمات</a> </li>
+							{% endif%}
+						</ul>
+					</li>
+
+					<!-- Nav item 4 Component-->
+
+
+					<!-- Nav item 5 link-->
+					<li class="nav-item dropdown">
+						<a class="nav-link" href="#" id="advanceMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fas fa-ellipsis-h"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end min-w-auto" data-bs-popper="none">
+							<li>
+								<a class="dropdown-item" href="" target="_blank">
+									<i class="text-warning fa-fw bi bi-life-preserver me-2"></i>پشتیبانی
+								</a>
+							</li>
+
+							<li> <hr class="dropdown-divider"></li>
+
+
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Nav Search START -->
+			<div class="nav-item dropdown nav-search px-1 px-lg-3">
+				<a class="nav-link" role="button" href="#" id="navSearch" data-bs-toggle="dropdown" aria-expanded="true" data-bs-auto-close="outside" data-bs-display="static">
+					<i class="bi bi-search fs-4"> </i>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end shadow rounded p-2" aria-labelledby="navSearch" data-bs-popper="none">
+					<form class="input-group">
+						<input class="form-control border-primary" type="search" placeholder="جستجو" aria-label="Search">
+						<button class="btn btn-primary m-0" type="submit">جستجو</button>
+					</form>
+
+					<!-- Recent search -->
+					<ul class="list-group list-group-borderless p-2 small">
+						<li class="list-group-item d-flex justify-content-between align-items-center">
+							<span class="fw-bold">جستجو های اخیر </span>
+							<button class="btn btn-sm btn-link mb-0 px-0">پاک کردن </button>
+						</li>
+						<li class="list-group-item text-primary-hover text-truncate">
+							<a href="#" class="text-body"> <i class="far fa-clock me-1"></i> آموزش زبان فارسی </a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+			<!-- Nav Search END -->
+
+      <!-- Profile START -->
+			<div class="dropdown ms-1 ms-lg-0">
+				<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+					<img class="avatar-img rounded-circle" src="{%  static 'home/assets/images/logo.jpg' %}" alt="avatar">
+				</a>
+				<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+					<!-- Profile info -->
+					<li class="px-3">
+						<div class="d-flex align-items-center">
+							<!-- Avatar -->
+							{% if user.is_authenticated  %}
+
+							    {% if user.profile.picture.url  %}
+        							<div class="avatar me-3">
+        								<img class="avatar-img rounded-circle shadow" src="{{user.profile.picture.url}}" alt="avatar">
+        							</div>
+							    {% else %}
+        							<div class="avatar me-3">
+        								<img class="avatar-img rounded-circle shadow" src="{%  static 'home/assets/images/logo.jpg' %}" alt="avatar">
+        							</div>
+
+							    {% endif %}
+
+							{% else %}
+        							<div class="avatar me-3">
+        								<img class="avatar-img rounded-circle shadow" src="{%  static 'home/assets/images/logo.jpg' %}" alt="avatar">
+        							</div>
+
+							{% endif %}
+							<div>
+							    {% if user.is_authenticated  %}
+								<a class="h6" href="#">{{user.email}}</a>
+								{% else %}
+								<a class="h6" href="#">هنوز وارد نشدید</a>
+								{% endif %}
+							</div>
+						</div>
+						<hr>
+					</li>
+					<!-- Links -->
+
+					<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i> پشتیبانی </a></li>
+                    {% if user.is_authenticated %}
+
+					<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i> ویرایش پروفایل </a></li>
+					<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i> تنظیمات حساب کاربری  </a></li>
+					<li><a class="dropdown-item bg-danger-soft-hover" href="{% url 'account:logout' %}"><i class="bi bi-power fa-fw me-2"></i>خروج</a></li>
+					{% endif %}
+					<li> <hr class="dropdown-divider"></li>
+					<!-- Dark mode switch START -->
+					<li>
+						<div class="modeswitch-wrap" id="darkModeSwitch">
+							<div class="modeswitch-item">
+								<div class="modeswitch-icon"></div>
+							</div>
+							<span>Dark mode</span>
+						</div>
+					</li>
+          <!-- Dark mode switch END -->
+				</ul>
+			</div>
+			<!-- Profile START -->
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>

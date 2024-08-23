@@ -1,6 +1,7 @@
 from django.shortcuts import render ,redirect
 from django.views import View
-from .models import AboutUs , FAQ , ContactUs , Supporter
+from .models import AboutUs , FAQ , ContactUs , Supporter , MainSlider
+from blog.models import Post
 from .forms import ContactUsForms
 from django.contrib import messages
 
@@ -14,13 +15,15 @@ class HomeView(View) :
 
     def setup(self , request , *args , **kwargs ) :
         self.supporter = Supporter.objects.all()
+        self.blogs     = Post.objects.all()
+        self.picture_slider = MainSlider.objects.first()
         return super().setup(request , *args , **kwargs )
 
     def get(self , request ) :
-        return render(request , self.template_name , {'supporter' : self.supporter })
+        return render(request , self.template_name , {'supporter' : self.supporter , 'picture_slider' : self.picture_slider , 'blogs' : self.blogs })
 
     def post(self , request ):
-        return render(request , self.template_name , {'supporter' : self.supporter })
+        return render(request , self.template_name , {'supporter' : self.supporter , 'picture_slider' : self.picture_slider  , 'blogs' : self.blogs })
 
 
 class AboutUserView(View) :
@@ -48,15 +51,11 @@ class FAQView(View) :
         return render(request , self.template_name , {'data':self.data } )
 
 
-
-
-
-
 class ContactUsView(View) :
 
 
     contact_form  = ContactUsForms
-    template_name = 'contactus/contactus.html'
+    template_name = 'home/contact-us.html'
 
 
     def get(self , request ) :
@@ -72,3 +71,15 @@ class ContactUsView(View) :
             return redirect('home:home')
 
         return render(request , self.template_name , {'form' : self.contact_form } )
+
+
+
+class Error(View) :
+
+    template_name = 'home/error-404.html'
+
+
+    def get(self , request ) :
+        return render(request , self.template_name , {} )
+
+

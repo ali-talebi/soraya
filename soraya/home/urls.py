@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomeView , AboutUserView , FAQView , ContactUsView
+from .views import HomeView , AboutUserView , FAQView , ContactUsView , Error
 
 
 app_name = 'home'
@@ -11,5 +11,5 @@ urlpatterns = [
     path('aboutus/' , AboutUserView.as_view() , name = 'aboutus' ) ,
     path('faq/' , FAQView.as_view() , name="faq" ) ,
     path('contactus/' , ContactUsView.as_view() , name='contactus' )  ,
-
+    path('error/' , Error.as_view() , {} )
 ]
