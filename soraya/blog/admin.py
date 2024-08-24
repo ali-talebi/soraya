@@ -14,7 +14,7 @@ class Tags_Post_Admin(admin.ModelAdmin) :
 @admin.register(PostComment)
 class PostComment_Admin(admin.ModelAdmin) :
     list_display  = ('name' , 'email' , 'status' )
-    search_fields = ('name' , 'email'  )
+    search_fields = ('name' , 'email' , 'text' )
     list_filter   = ('status' , )
 
 

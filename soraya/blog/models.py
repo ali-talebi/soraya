@@ -48,6 +48,10 @@ class Post(models.Model) :
     tags  = models.ManyToManyField(Tags_Post , verbose_name = 'تگ ها'  )
     times = jmodels.jDateTimeField(auto_now_add = True , verbose_name = 'زمان ایجاد'   ,  null = True )
     time_to_read = models.PositiveIntegerField(verbose_name = 'زمان  خواندن' , null = True )
+    author_idea  = RichTextField(verbose_name = 'نظر نویسنده', null = True  )
+    banner1      = models.FileField(verbose_name = 'بنر تبلیغاتی 1 '  , upload_to = "Post/Banner/banner1" , null = True  )
+    banner2      = models.FileField(verbose_name = 'بنر تبلیغاتی 2 '  , upload_to = "Post/Banner/banner2" , null = True  )
+    banner3      = models.FileField(verbose_name = 'بنر تبلیغاتی  3'  , upload_to = "Post/Banner/banner3" , null = True  )
 
 
 
@@ -77,14 +81,14 @@ class PostComment(models.Model) :
         ('checheck' , 'چک' ) ,
         ('pass'     , 'تایید' )
         )
-
+    post_selected  = models.ForeignKey(Post , verbose_name = 'پست انتخاب شده'  , null = True ,on_delete = models.CASCADE  )
     name    = models.CharField(verbose_name  = 'نام پاسخ دهنده'    , max_length = 100  )
     email   = models.EmailField(verbose_name = 'ایمیل پاسخ دهنده'  )
     text    = models.TextField(verbose_name  = 'متن پاسخ'   )
     status  = models.CharField(max_length    = 20 , choices = STATUS_POST_COMMENT , default = 'no_check' , verbose_name = 'وضعیت بررسی کامنت' )
-
+    times   = jmodels.jDateTimeField(verbose_name = '' , null = True , auto_now_add = True )
     def __str__(self) :
-        return self.author
+        return self.name
 
     class Meta :
         db_table = 'PostComment'

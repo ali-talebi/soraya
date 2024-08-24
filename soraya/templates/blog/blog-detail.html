@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Eduport - LMS, Education and Course Theme</title>
+	<title> جزئیات وبلاگ  </title>
 
 	<!-- Meta Tags -->
 	<meta charset="utf-8">
@@ -72,9 +72,9 @@ Main Content START -->
 					</div>
 
 					<!-- Content -->
-					<div class="col-lg-9 order-1">
+					<div dir="rtl" class="col-lg-9 order-1">
 						<!-- Pre title -->
-						<span> {{data.times | naturaltime }} </span><span class="mx-2">|</span><div class="badge bg-success text-white">{{data.category}}</div>
+						<span> {{data.times|jformat:"%A %d %B %Y %H:%M" }} </span><span class="mx-2">|</span><div class="badge bg-success text-white">{{data.category}}</div>
 						<!-- Title -->
 						<h1 dir="rtl" class="mt-2 mb-0 display-5">{{data.name}}</h1>
 						<!-- Info -->
@@ -123,20 +123,22 @@ Main Content START -->
 					</div>
 
 					<!-- Quote -->
-					<div class="col-lg-10 col-xl-8 mx-auto mt-4">
+					<div dir="rtl" class="col-lg-10 col-xl-8 mx-auto mt-4">
 						<div class="bg-light rounded-3 p-3 p-md-4">
 							<!-- Content -->
-							<q class="lead">Farther-related bed and passage comfort civilly. Fulfilled direction use continual set him propriety continued. Concluded boy perpetual old supposing. Dashwoods see frankness objection abilities.</q>
+							<q class="lead">
+							    {{data.author_idea | safe }}
+							    </q>
 							<!-- Avatar -->
 							<div class="d-flex align-items-center mt-3">
 								<!-- Avatar image -->
 								<div class="avatar avatar-md">
-									<img class="avatar-img rounded-circle" src="{% static 'home/assets/images/avatar/07.jpg' %}" alt="avatar">
+									<img class="avatar-img rounded-circle" src="{{data.author.picture.url}}" alt="avatar">
 								</div>
 								<!-- Info -->
 								<div class="ms-2">
 									<h6 class="mb-0"><a href="#">Louis Crawford</a></h6>
-									<p class="mb-0 small">Via Twitter</p>
+									<p class="mb-0 small">{{data.author.first_name}} - {{data.author.last_name}} </p>
 								</div>
 							</div>
 						</div>
@@ -145,29 +147,30 @@ Main Content START -->
 				<!-- Quote and content END -->
 
 				<!-- Image START -->
-				<div class="row g-4 mt-4">
+				<div class="row g-4 mt-4 center">
 					<div class="col-sm-6 col-md-4">
 						<a href="{% static 'home/assets/images/event/07.jpg' %}" data-glightbox="" data-gallery="image-popup">
-							<img src="{% static 'home/assets/images/event/07.jpg' %}" class="rounded-3" alt="">
+							<img style="width:300px;height:300px" src="{{data.banner1.url}}" class="rounded-3" alt="baner1">
 						</a>
 					</div>
 
-					<div class="col-sm-6 col-md-4">
+					<div class="col-sm-6 col-md-4 center">
 						<a href="{% static 'home/assets/images/event/08.jpg' %}" data-glightbox="" data-gallery="image-popup">
-							<img src="{% static 'home/assets/images/event/08.jpg' %}" class="rounded-3" alt="">
+							<img style="width:300px;height:300px" src="{{data.banner2.url}}" class="rounded-3" alt="baner2">
 						</a>
 					</div>
 
-					<div class="col-sm-6 col-md-4">
+					<div class="col-sm-6 col-md-4 center">
 						<a href="{% static 'home/assets/images/event/06.jpg' %}" data-glightbox="" data-gallery="image-popup">
-							<img src="{% static 'home/assets/images/event/06.jpg' %}" class="rounded-3" alt="">
+							<img style="width:300px;height:300px" src="{{data.banner3.url}}" class="rounded-3" alt="baner3">
 						</a>
 					</div>
 				</div>
 				<!-- Image END -->
 
 				<!-- Content START -->
-				<div class="row">
+				<div dir="rtl" class="row">
+				    <br><br>
 					<div class="row mb-4">
 
                         {{data.description2|safe}}
@@ -205,83 +208,53 @@ Main Content START -->
 				<div class="row mt-4">
 					<!-- Comment START -->
 					<div class="col-md-7">
-						<h3>3 comments</h3>
+						<h3>{{total_comment.count}} نظرات </h3>
+						{% for comment in total_comment %}
 						<!-- Comment level 1-->
 						<div class="my-4 d-flex">
 							<img class="avatar avatar-md rounded-circle me-3" src="{% static 'home/assets/images/avatar/01.jpg' %}" alt="avatar">
 							<div>
 								<div class="mb-2">
-									<h5 class="m-0">Frances Guerrero</h5>
-									<span class="me-3 small">June 11, 2021 at 6:01 am</span>
+									<h5 class="m-0">{{comment.name}}</h5>
+									<span class="me-3 small">{{comment.times|jformat:"%A %d %B %Y %H:%M"}}</span>
 								</div>
-								<p>Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do.</p>
-								<a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
+								<p>
+                                    {{comment.text}}
+								</p>
+								<a href="#" class="btn btn-sm btn-light mb-0">پاسخ</a>
 							</div>
 						</div>
-						<!-- Comment children level 2 -->
-						<div class="my-4 d-flex ps-2 ps-md-4">
-							<img class="avatar avatar-md rounded-circle me-3" src="{% static 'home/assets/images/avatar/02.jpg' %}" alt="avatar">
-							<div>
-								<div class="mb-2">
-									<h5 class="m-0">Louis Ferguson</h5>
-									<span class="me-3 small">June 11, 2021 at 6:55 am</span>
-								</div>
-								<p>Water timed folly right aware if oh truth. Imprudence attachment him for sympathize. Large above be to means. Dashwood does provide stronger is. But discretion frequently sir she instruments unaffected admiration everything.</p>
-								<a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
-							</div>
-						</div>
-						<!-- Comment children level 3 -->
-						<div class="my-4 d-flex ps-3 ps-md-5">
-							<img class="avatar avatar-md rounded-circle me-3" src="{% static 'home/assets/images/avatar/01.jpg' %}" alt="avatar">
-							<div>
-								<div class="mb-2">
-									<h5 class="m-0">Frances Guerrero</h5>
-									<span class="me-3 small">June 12, 2021 at 7:30 am</span>
-								</div>
-								<p>Water timed folly right aware if oh truth.</p>
-								<a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
-							</div>
-						</div>
-						<!-- Comment level 1 -->
-						<div class="my-4 d-flex">
-							<img class="avatar avatar-md rounded-circle me-3" src="{% static 'home/assets/images/avatar/04.jpg' %}" alt="avatar">
-							<div>
-								<div class="mb-2">
-									<h5 class="m-0">Judy Nguyen</h5>
-									<span class="me-3 small">June 18, 2021 at 11:55 am</span>
-								</div>
-								<p>Fulfilled direction use continual set him propriety continued. Saw met applauded favorite deficient engrossed concealed and her. Concluded boy perpetual old supposing. Farther-related bed and passage comfort civilly.</p>
-								<a href="#" class="btn btn-sm btn-light mb-0">Reply</a>
-							</div>
-						</div>
+						{% endfor %}
+
 					</div>
 					<!-- Comment END -->
 
 					<!-- Form START -->
-					<div class="col-md-5">
+					<div dir="rtl" class="col-md-5">
 						<!-- Title -->
-						<h3 class="mt-3 mt-sm-0">Your Views Please!</h3>
-						<small>Your email address will not be published. Required fields are marked *</small>
+						<h3 class="mt-3 mt-sm-0">  از طریق فرم زیر ، نظرات خود را درباره این محتوا ارسال بفرمایید  </h3>
+						<small>ایمیل شما منتشر نمیشود  . موارد ضروری میباشند  *</small>
 
-						<form class="row g-3 mt-2 mb-5">
+						<form method="POST"  class="row g-3 mt-2 mb-5">
+						    {% csrf_token %}
 							<!-- Name -->
 							<div class="col-lg-6">
-								<label class="form-label">Name *</label>
-								<input type="text" class="form-control" aria-label="First name">
+								<label class="form-label"> نام و نام خانوادگی *</label>
+								<input type="text" , name="name" class="form-control" aria-label="First name">
 							</div>
 							<!-- Email -->
 							<div class="col-lg-6">
-								<label class="form-label">Email *</label>
-								<input type="email" class="form-control">
+								<label class="form-label">ایمیل  *</label>
+								<input type="email" name="email" class="form-control">
 							</div>
 							<!-- Comment -->
 							<div class="col-12">
-								<label class="form-label">Your Comment *</label>
-								<textarea class="form-control" rows="3"></textarea>
+								<label class="form-label">متن نظر  *</label>
+								<textarea class="form-control" name="text" rows="3"></textarea>
 							</div>
 							<!-- Button -->
 							<div class="col-12">
-								<button type="submit" class="btn btn-primary mb-0">Post comment</button>
+								<button type="submit" class="btn btn-primary mb-0"> ارسال نظر </button>
 							</div>
 						</form>
 					</div>
@@ -302,85 +275,33 @@ Related blog START -->
     <!-- Title -->
 		<div class="row mb-4">
 			<div class="col-12">
-			<h2 class="mb-0">You may also like</h2>
+			<h2 class="mb-0">دیگر پست های ما</h2>
 			</div>
 		</div>
 
 		<!-- Slider START -->
 		<div class="tiny-slider arrow-round arrow-hover arrow-dark">
 			<div class="tiny-slider-inner" data-autoplay="false" data-arrow="true" data-edge="2" data-dots="false" data-items="3" data-items-lg="2" data-items-sm="1">
-
+                {% for post in another_posts %}
 				<!-- Slider item -->
 				<div class="card">
 					<div class="row g-0">
 						<!-- Image -->
 						<div class="col-md-4">
-							<img src="{% static 'home/assets/images/event/06.jpg' %}" class="img-fluid rounded-start" alt="...">
+							<img src="{{post.picture.url}}" class="img-fluid rounded-start" alt="...">
 						</div>
 						<!-- Card body -->
 						<div class="col-md-8">
 							<div class="card-body">
 								<!-- Title -->
-								<h6 class="card-title"><a href="#">Dirty little secrets about the business industry</a></h6>
-								<span class="small">July 21, 2021</span>
+								<h6 class="card-title"><a href="{{post.get_absolute_url}}">{{post.name}}</a></h6>
+								<span class="small">{{post.times|jformat:"%A %d %B %Y %H:%M"}}</span>
 							</div>
 						</div>
 					</div>
 				</div>
+                {% endfor %}
 
-				<!-- Slider item -->
-				<div class="card">
-					<div class="row g-0">
-						<!-- Image -->
-						<div class="col-md-4">
-							<img src="{% static 'home/assets/images/event/04.jpg' %}" class="img-fluid rounded-start" alt="...">
-						</div>
-						<!-- Card body -->
-						<div class="col-md-8">
-							<div class="card-body">
-								<!-- Title -->
-								<h6 class="card-title"><a href="#">This is why this year will be the year of startups</a></h6>
-								<span class="small">50min ago</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slider item -->
-				<div class="card">
-					<div class="row g-0">
-						<!-- Image -->
-						<div class="col-md-4">
-							<img src="{% static 'home/assets/images/event/03.jpg' %}" class="img-fluid rounded-start" alt="...">
-						</div>
-						<!-- Card body -->
-						<div class="col-md-8">
-							<div class="card-body">
-								<!-- Title -->
-								<h6 class="card-title"><a href="#">Covid-19 and the college experienced</a></h6>
-								<span class="small">Aug 31, 2021</span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slider item -->
-				<div class="card">
-					<div class="row g-0">
-						<!-- Image -->
-						<div class="col-md-4">
-							<img src="{% static 'home/assets/images/event/05.jpg' %}" class="img-fluid rounded-start" alt="...">
-						</div>
-						<!-- Card body -->
-						<div class="col-md-8">
-							<div class="card-body">
-								<!-- Title -->
-								<h6 class="card-title"><a href="#">This is why this year will be the year of startups</a></h6>
-								<span class="small">50min ago</span>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 		<!-- Slider END -->
